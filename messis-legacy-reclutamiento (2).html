@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messis Legacy - Únete al Equipo | Royal Prestige</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            }
+            to {
+                filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.8));
+            }
+        }
+
+        .brand-name {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #D4AF37, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            color: #D4AF37;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .warning-badge {
+            display: inline-block;
+            background: #ff4444;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Requirements Section */
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+        }
+
+        .requirement-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #D4AF37;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            border-color: #FFD700;
+        }
+
+        .requirement-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .requirement-card h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 60px 20px;
+            margin: 40px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        .benefit-item h4 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Form Section */
+        .form-section {
+            max-width: 800px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid #D4AF37;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #D4AF37;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .required {
+            color: #ff4444;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #D4AF37, #FFD700);
+            border: none;
+            border-radius: 50px;
+            color: #000;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: linear-gradient(45deg, #00ff88, #00cc66);
+            color: #000;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 2px solid #D4AF37;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #D4AF37;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #FFD700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .brand-name {
+                font-size: 1.8em;
+            }
+
+            .form-section {
+                padding: 20px;
+            }
+        }
+
+        /* Validation styles */
+        .error {
+            border-color: #ff4444 !important;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <svg class="logo" width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stylized wheat/grain symbol inspired by the uploaded image -->
+                <defs>
+                    <radialGradient id="goldGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Central stem -->
+                <path d="M 100 180 L 100 20" stroke="url(#goldGradient)" stroke-width="4" fill="none"/>
+                
+                <!-- Wheat grains - left side -->
+                <ellipse cx="80" cy="50" rx="15" ry="8" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="75" cy="70" rx="16" ry="9" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="70" cy="90" rx="17" ry="10" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="75" cy="110" rx="16" ry="9" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="80" cy="130" rx="15" ry="8" fill="url(#goldGradient)" opacity="0.9"/>
+                
+                <!-- Wheat grains - right side -->
+                <ellipse cx="120" cy="50" rx="15" ry="8" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="125" cy="70" rx="16" ry="9" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="130" cy="90" rx="17" ry="10" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="125" cy="110" rx="16" ry="9" fill="url(#goldGradient)" opacity="0.9"/>
+                <ellipse cx="120" cy="130" rx="15" ry="8" fill="url(#goldGradient)" opacity="0.9"/>
+                
+                <!-- Top grain -->
+                <ellipse cx="100" cy="25" rx="12" ry="15" fill="url(#goldGradient)"/>
+                
+                <!-- Decorative lines -->
+                <path d="M 80 50 L 100 48" stroke="url(#goldGradient)" stroke-width="2" opacity="0.7"/>
+                <path d="M 120 50 L 100 48" stroke="url(#goldGradient)" stroke-width="2" opacity="0.7"/>
+                <path d="M 70 90 L 100 88" stroke="url(#goldGradient)" stroke-width="2" opacity="0.7"/>
+                <path d="M 130 90 L 100 88" stroke="url(#goldGradient)" stroke-width="2" opacity="0.7"/>
+            </svg>
+        </div>
+        <h1 class="brand-name">Messis Legacy</h1>
+        <p class="subtitle">Royal Prestige</p>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>¿TENÉS ENTRE 18-25 AÑOS Y QUERÉS CAMBIAR TU REALIDAD?</h1>
+            <p>Buscamos 2 Socios Estratégicos para construir algo grande</p>
+            <div class="warning-badge">⚠️ ESTO NO ES PARA TODOS ⚠️</div>
+        </section>
+
+        <section class="requirements">
+            <div class="requirement-card">
+                <div class="requirement-icon">⚡</div>
+                <h3>DISPONIBILIDAD FULL TIME</h3>
+                <p>No buscamos empleados de medio tiempo. Buscamos socios comprometidos 100%</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-icon">🏍️</div>
+                <h3>MOVILIDAD PROPIA</h3>
+                <p>Requisito EXCLUYENTE. Necesitás poder moverte con libertad</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-icon">📚</div>
+                <h3>CAPACITACIÓN INTENSIVA</h3>
+                <p>4 horas diarias por 2 semanas. Sin excepciones. Sin excusas.</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-icon">🔥</div>
+                <h3>HAMBRE DE ÉXITO</h3>
+                <p>Si te conformás con poco, este NO es tu lugar</p>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>¿QUÉ OFRECEMOS?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>→ Formación Profesional</h4>
+                    <p>Capacitación de elite en ventas de alto impacto y liderazgo</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>→ Sistema Comprobado</h4>
+                    <p>Metodología Royal Prestige con resultados reales y medibles</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>→ Ingresos Sin Techo</h4>
+                    <p>Tu esfuerzo = Tu recompensa. Sin límites artificiales</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>→ Construí Tu Negocio</h4>
+                    <p>No trabajás para nosotros. Construimos JUNTOS</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>→ Acompañamiento 1 a 1</h4>
+                    <p>Mentoría personalizada durante todo tu proceso</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>→ Red de Contactos</h4>
+                    <p>Acceso a una comunidad de alto rendimiento</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>APLICÁ AHORA</h2>
+            <p style="text-align: center; color: #cccccc; margin-bottom: 30px;">
+                Solo contactaremos a candidatos que cumplan con TODOS los requisitos
+            </p>
+
+            <form id="applicationForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                    <span class="error-message" id="errorNombre">Por favor ingresá tu nombre completo</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad <span class="required">*</span></label>
+                    <input type="number" id="edad" name="edad" min="18" max="25" required placeholder="Tu edad">
+                    <span class="error-message" id="errorEdad">Debés tener entre 18 y 25 años</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono / WhatsApp <span class="required">*</span></label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="+54 9 11 XXXX-XXXX">
+                    <span class="error-message" id="errorTelefono">Ingresá un número válido</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    <span class="error-message" id="errorEmail">Ingresá un email válido</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ciudad">Ciudad <span class="required">*</span></label>
+                    <input type="text" id="ciudad" name="ciudad" required placeholder="Tu ciudad">
+                    <span class="error-message" id="errorCiudad">Por favor ingresá tu ciudad</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="movilidad">Tipo de Movilidad <span class="required">*</span></label>
+                    <select id="movilidad" name="movilidad" required>
+                        <option value="">Seleccioná tu movilidad</option>
+                        <option value="moto">Moto</option>
+                        <option value="auto">Auto</option>
+                        <option value="bicicleta">Bicicleta</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <span class="error-message" id="errorMovilidad">Debés tener movilidad propia</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Experiencia en Ventas</label>
+                    <select id="experiencia" name="experiencia">
+                        <option value="ninguna">Sin experiencia</option>
+                        <option value="menos1">Menos de 1 año</option>
+                        <option value="1a3">1 a 3 años</option>
+                        <option value="mas3">Más de 3 años</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivacion">¿Por qué querés ser parte de Messis Legacy? <span class="required">*</span></label>
+                    <textarea id="motivacion" name="motivacion" required placeholder="Contanos por qué deberíamos elegirte a vos..."></textarea>
+                    <span class="error-message" id="errorMotivacion">Contanos tu motivación</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="disponibilidad">¿Podés comprometerte con 4 horas diarias de capacitación durante 2 semanas? <span class="required">*</span></label>
+                    <select id="disponibilidad" name="disponibilidad" required>
+                        <option value="">Seleccioná una opción</option>
+                        <option value="si">Sí, puedo comprometerme 100%</option>
+                        <option value="no">No puedo en este momento</option>
+                    </select>
+                    <span class="error-message" id="errorDisponibilidad">Esto es requisito excluyente</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="objetivos">¿Dónde te ves en 1 año? <span class="required">*</span></label>
+                    <textarea id="objetivos" name="objetivos" required placeholder="Describí tu visión..."></textarea>
+                    <span class="error-message" id="errorObjetivos">Queremos conocer tu visión</span>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="acepto" name="acepto" required>
+                    <label for="acepto">Acepto que la información proporcionada es verídica y entiendo que esto es una sociedad, no un empleo tradicional <span class="required">*</span></label>
+                </div>
+                <span class="error-message" id="errorAcepto">Debés aceptar los términos</span>
+
+                <button type="submit" class="submit-btn">🚀 ENVIAR MI APLICACIÓN</button>
+
+                <div class="success-message" id="successMessage">
+                    ✅ ¡APLICACIÓN ENVIADA CON ÉXITO!<br>
+                    Te contactaremos en las próximas 48 horas si cumplís con el perfil.
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Messis Legacy</strong> - Royal Prestige</p>
+        <p>Construyendo legados, no empleos</p>
+        <div class="social-links">
+            <a href="#" target="_blank">📱 WhatsApp</a>
+            <a href="#" target="_blank">📧 Email</a>
+            <a href="#" target="_blank">📷 Instagram</a>
+        </div>
+        <p style="margin-top: 20px; color: #888; font-size: 0.9em;">
+            © 2024 Messis Legacy. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validate all required fields
+            const nombre = document.getElementById('nombre');
+            const edad = document.getElementById('edad');
+            const telefono = document.getElementById('telefono');
+            const email = document.getElementById('email');
+            const ciudad = document.getElementById('ciudad');
+            const movilidad = document.getElementById('movilidad');
+            const motivacion = document.getElementById('motivacion');
+            const disponibilidad = document.getElementById('disponibilidad');
+            const objetivos = document.getElementById('objetivos');
+            const acepto = document.getElementById('acepto');
+            
+            // Reset error states
+            document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+            document.querySelectorAll('input, select, textarea').forEach(el => el.classList.remove('error'));
+            
+            // Validate nombre
+            if (nombre.value.trim().length < 3) {
+                isValid = false;
+                nombre.classList.add('error');
+                document.getElementById('errorNombre').classList.add('show');
+            }
+            
+            // Validate edad
+            const edadValue = parseInt(edad.value);
+            if (edadValue < 18 || edadValue > 25) {
+                isValid = false;
+                edad.classList.add('error');
+                document.getElementById('errorEdad').classList.add('show');
+            }
+            
+            // Validate telefono
+            if (telefono.value.trim().length < 8) {
+                isValid = false;
+                telefono.classList.add('error');
+                document.getElementById('errorTelefono').classList.add('show');
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                isValid = false;
+                email.classList.add('error');
+                document.getElementById('errorEmail').classList.add('show');
+            }
+            
+            // Validate ciudad
+            if (ciudad.value.trim().length < 2) {
+                isValid = false;
+                ciudad.classList.add('error');
+                document.getElementById('errorCiudad').classList.add('show');
+            }
+            
+            // Validate movilidad
+            if (movilidad.value === '') {
+                isValid = false;
+                movilidad.classList.add('error');
+                document.getElementById('errorMovilidad').classList.add('show');
+            }
+            
+            // Validate motivacion
+            if (motivacion.value.trim().length < 20) {
+                isValid = false;
+                motivacion.classList.add('error');
+                document.getElementById('errorMotivacion').classList.add('show');
+            }
+            
+            // Validate disponibilidad
+            if (disponibilidad.value !== 'si') {
+                isValid = false;
+                disponibilidad.classList.add('error');
+                document.getElementById('errorDisponibilidad').classList.add('show');
+            }
+            
+            // Validate objetivos
+            if (objetivos.value.trim().length < 20) {
+                isValid = false;
+                objetivos.classList.add('error');
+                document.getElementById('errorObjetivos').classList.add('show');
+            }
+            
+            // Validate checkbox
+            if (!acepto.checked) {
+                isValid = false;
+                document.getElementById('errorAcepto').classList.add('show');
+            }
+            
+            if (isValid) {
+                // Collect form data
+                const formData = {
+                    nombre: nombre.value,
+                    edad: edad.value,
+                    telefono: telefono.value,
+                    email: email.value,
+                    ciudad: ciudad.value,
+                    movilidad: movilidad.value,
+                    experiencia: document.getElementById('experiencia').value,
+                    motivacion: motivacion.value,
+                    disponibilidad: disponibilidad.value,
+                    objetivos: objetivos.value,
+                    fecha: new Date().toLocaleString('es-AR')
+                };
+                
+                // Here you would normally send the data to a server
+                // For now, we'll just log it and show success message
+                console.log('Form Data:', formData);
+                
+                // You can also save to localStorage for now
+                const applications = JSON.parse(localStorage.getItem('applications') || '[]');
+                applications.push(formData);
+                localStorage.setItem('applications', JSON.stringify(applications));
+                
+                // Show success message
+                document.getElementById('successMessage').classList.add('show');
+                
+                // Reset form
+                this.reset();
+                
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.remove('show');
+                }, 10000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        // Real-time validation
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value) {
+                    this.classList.add('error');
+                } else {
+                    this.classList.remove('error');
+                }
+            });
+            
+            element.addEventListener('input', function() {
+                if (this.classList.contains('error') && this.value) {
+                    this.classList.remove('error');
+                    const errorId = 'error' + this.id.charAt(0).toUpperCase() + this.id.slice(1);
+                    const errorElement = document.getElementById(errorId);
+                    if (errorElement) {
+                        errorElement.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
